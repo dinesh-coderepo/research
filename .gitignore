@@ -1,0 +1,4 @@
+build/tmp/
+*.aux
+*.log
+*.out

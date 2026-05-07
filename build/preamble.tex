@@ -1,0 +1,80 @@
+\usepackage[a4paper,margin=2.2cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{mathpazo}
+\usepackage[scaled=0.92]{helvet}
+\usepackage{courier}
+\PassOptionsToPackage{protrusion=true,expansion=false}{microtype}
+\usepackage{xcolor}
+\DeclareUnicodeCharacter{2264}{$\leq$}
+\DeclareUnicodeCharacter{2265}{$\geq$}
+\DeclareUnicodeCharacter{2192}{$\rightarrow$}
+\DeclareUnicodeCharacter{2190}{$\leftarrow$}
+\DeclareUnicodeCharacter{21D2}{$\Rightarrow$}
+\DeclareUnicodeCharacter{2208}{$\in$}
+\DeclareUnicodeCharacter{2260}{$\neq$}
+\DeclareUnicodeCharacter{2032}{$'$}
+\DeclareUnicodeCharacter{2033}{$''$}
+\DeclareUnicodeCharacter{2022}{\textbullet}
+\DeclareUnicodeCharacter{2026}{\ldots}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{longtable,booktabs,array}
+\usepackage{enumitem}
+
+% Color palette — deep blue + teal + warm orange
+\definecolor{primary}{HTML}{0F766E}     % teal
+\definecolor{secondary}{HTML}{1E3A8A}   % deep blue
+\definecolor{accent}{HTML}{F97316}      % warm orange
+\definecolor{lightbg}{HTML}{F0FDFA}     % pale teal
+\definecolor{rowalt}{HTML}{F1F5F9}      % subtle gray
+\definecolor{codebg}{HTML}{F8FAFC}
+\definecolor{rule}{HTML}{14B8A6}
+
+% Headings
+\titleformat{\section}{\Large\bfseries\color{primary}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{secondary}}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\bfseries\color{secondary}}{\thesubsubsection}{0.4em}{}
+\titlespacing*{\section}{0pt}{1.6em}{0.8em}
+
+% Header / footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{secondary}\bfseries Microsoft Researcher's Playbook}
+\fancyhead[R]{\small\color{primary}\itshape for Dinesh}
+\fancyfoot[C]{\small\color{secondary}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{rule}\hrule width\headwidth height 0.6pt \vspace{1pt}\color{accent}\hrule width\headwidth height 0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Callout boxes — pandoc renders blockquotes as \begin{quote}
+\renewenvironment{quote}{%
+  \begin{tcolorbox}[
+    enhanced,breakable,
+    colback=lightbg,colframe=primary,
+    boxrule=0pt,leftrule=4pt,
+    arc=2pt,outer arc=2pt,
+    left=10pt,right=10pt,top=6pt,bottom=6pt,
+    before skip=8pt, after skip=8pt,
+  ]\itshape}{%
+  \end{tcolorbox}}
+
+% Striped tables
+\usepackage{xcolor,colortbl}
+\let\oldlongtable\longtable
+\let\endoldlongtable\endlongtable
+\renewenvironment{longtable}{\rowcolors{2}{rowalt}{white}\oldlongtable}{\endoldlongtable}
+
+% Code blocks (pandoc uses Shaded environment for highlighted code)
+\definecolor{shadecolor}{HTML}{F8FAFC}
+
+% Hyperlinks
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=primary,urlcolor=accent,citecolor=secondary,
+  pdftitle={The Microsoft Researcher's Playbook}, pdfauthor={Compiled by Chinni}}
+
+% Title page tweak
+\usepackage{etoolbox}
+\AtBeginDocument{\hypersetup{linkcolor=primary}}
