@@ -9,6 +9,8 @@
 |---|---|
 | `GUIDE.md` | The master playbook — read this first |
 | `patent-process/` | Microsoft IDF flow, USPTO basics, prior art, claim writing |
+| `patent-process/founder-track.md` | **NEW** — Reading the public patent landscape for your post-MS startup (AI Agents + Robotics) |
+| `patent-process/patent-reading-log.md` | **NEW** — Append-only log of patents you've read |
 | `paper-process/` | MS publication approval, venue selection, writing & arXiv |
 | `ideas/` | 5 patent ideas, 5 paper topics, prioritization matrix |
 | `timeline/` | 90-day plan + 2026 conference deadlines |
@@ -20,9 +22,11 @@
 
 - [x] Repo initialized
 - [x] First-pass guide drafted by Chinni 🤖
-- [ ] Pick top 1 patent + 1 paper topic (review session: **Fri 2026-05-08, 21:00 IST**)
+- [x] Founder-track patent reading guide added (May 9, 2026)
+- [ ] Pick top 1 patent + 1 paper topic (review session: **Sun 2026-05-10, 22:00 IST** — cascaded from May 9)
 - [ ] File first IDF
 - [ ] Submit first paper
+- [ ] First entry in `patent-reading-log.md`
 
 ## ⚠️ Important
 
